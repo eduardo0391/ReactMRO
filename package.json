@@ -1,0 +1,68 @@
+{
+<<<<<<< HEAD
+  "name": "my-app",
+=======
+  "name": "myfirstapp",
+>>>>>>> eb295a0c773d55a709c8b19923e6e0ce9b47f651
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+<<<<<<< HEAD
+    "axios": "^0.21.1",
+    "bootstrap": "^4.5.3",
+    "moment": "^2.29.1",
+    "node-sass": "^5.0.0",
+    "react-date-picker": "^8.0.7",
+    "react-datepicker": "^3.4.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "4.0.0",
+    "react-update": "^0.4.4",
+    "reactstrap": "^8.8.0",
+    "typescript": "^4.1.5",
+    "web-vitals": "^0.2.4",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-plugin-serve": "^1.2.1"
+=======
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.0",
+    "web-vitals": "^0.2.4"
+>>>>>>> eb295a0c773d55a709c8b19923e6e0ce9b47f651
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+<<<<<<< HEAD
+  },
+  "devDependencies": {
+    "jquery": "^3.5.1",
+    "react": "^16.14.0",
+    "type-fest": "^0.20.2"
+=======
+>>>>>>> eb295a0c773d55a709c8b19923e6e0ce9b47f651
+  }
+}
