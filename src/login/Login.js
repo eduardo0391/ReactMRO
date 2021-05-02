@@ -1,25 +1,26 @@
 import React, {useEffect, useState} from 'react'
-import {useHistory} from 'react-router-dom'
 import axios from 'axios';
 
 
 function Login(props)
 {
 const [user, setUser] = useState({Email:'', Password:''});
-const apiUrl= "http://localhost:1010/api/User/Login"
-
+const apiUrl= "http://localhost:1010/api/User/Login";
+const [error, setError]=useState("");
+// const apiUrl= "http://localhost:55205/api/User/Login"
 
 const Login = (e) => {
+      setError('');
       e.preventDefault();
       const data= {User : user.User, Password : user.Password};
       axios.post(apiUrl, data)
       .then((result)=> {
-        // const serializedState = JSON.stringify(result.data.user);
-        localStorage.setItem('myUser', user.User);
+        const serializedState = JSON.stringify(result.data.user);
+        localStorage.setItem('myUser', serializedState);
         if (result.data.status)
-           props.history.push('/Dashboard');
+           props.history.push('/Movement');
           else
-              alert('user invalid');
+            setError('user invalid');
       })
 }
 
@@ -35,23 +36,37 @@ const onChange = (e) => {
 }
 
 return (
-    <div>
-        <div class="text-center">
-            <h1>Welcome</h1>
-        </div> 
-        <form onSubmit={Login} className="user">
-            <div class="form-group">
-                <input type="Text" class="form-control" value={user.User} 
-                placeholder="User or Email" onChange={onChange} name="User"></input>
+<form onSubmit={Login}>
+<h3>Sign In</h3>
 
-                <input type="Password" class="form-control" value={user.Password}
-                placeholder="Password" onChange={onChange} name="Password"></input>
-                
-                <button type="submit">Entrar</button>
-            </div>
-        </form>
+<div className="form-group">
+    
+    <label>Email address</label>
+    <input type="Text" class="form-control" value={user.User} 
+    placeholder="User or Email" onChange={onChange} name="User"></input>
+</div>
 
+<div className="form-group">
+    <label>Password</label>
+    <input type="Password" class="form-control" value={user.Password}
+    placeholder="Password" onChange={onChange} name="Password"></input>
+</div>
+
+<div className="form-group">
+    <div className="custom-control custom-checkbox">
+        <input type="checkbox" className="custom-control-input" id="customCheck1" />
+        <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
     </div>
+</div>
+
+<button type="submit" onSubmit={Login} className="user" className="btn btn-primary btn-block">Submit</button>
+<p className="forgot-password text-right">
+    Forgot <a href="#">password?</a>
+</p>
+ 
+  { error ? <span className="alert alert-danger" >{error}</span>: null }
+</form>
+
 )
 }
 

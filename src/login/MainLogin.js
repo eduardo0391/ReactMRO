@@ -1,10 +1,10 @@
 import React from 'react';  
 import './App.css';  
-import Login from "./login/Login";  
+import Login from "./Login";  
 import Dashboard from "./login/Dashboard";  
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';   
  
-function Main() {  
+function MainLogin() {  
   return (  
     <Router>      
       <div className="container">      
@@ -31,4 +31,4 @@ function Main() {
   );  
 }  
   
-export default Main;
+export default MainLogin;
