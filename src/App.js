@@ -2,6 +2,7 @@ import React from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Redirect } from 'react-router';
 import Login from "./login/Login";
 import Register from "./login/Register";
 import Movement from './Movement'
@@ -9,7 +10,7 @@ import Movement from './Movement'
 function App() {
   return (<Router>
     <div className="App">
-      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+      <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container">
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav ml-auto">
@@ -23,18 +24,14 @@ function App() {
           </div>
         </div>
       </nav>
-
-      <div className="auth-wrapper">  
-        <div className="auth-inner">
           <Switch>
-            {/* <Route exact path='/' component={Login} />*/}
-             <Route path="/Register" component={Register} />
-            <Route path="/Login" component={Login} /> 
+            <Route path="/Register" component={Register} />
+            <Route exact path="/Login" component={Login} /> 
             <Route path="/Movement" component={Movement} /> 
+            <Redirect to="/Login" />
           </Switch>
-        </div>
-      </div>
-    </div></Router>
+    </div>
+    </Router>
   );
 }
 

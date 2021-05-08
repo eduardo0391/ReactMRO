@@ -122,13 +122,16 @@ const [dateValue, setDate]= useState(new Date (currentDate.getFullYear(),current
   }, [])
 
   return(
-    <div className="App">
-
-
-      <br></br>
-      <button onClick={()=>abrirCerrarModalInsert()} className="btn btn-success">Insertar Nuevo Gestor</button>
-      <br></br>
-      <table className="table table-bordered">
+    <div className="container-fluid">  
+     <div className="row">
+       <div className="col-sm"></div>
+       <div className="col-sm"></div>
+       <div className="col-sm">
+            <button onClick={()=>abrirCerrarModalInsert()} className="btn btn-success">Agregar</button>
+       </div> 
+     </div>
+    <div className="row">
+    <table className="table table-bordered">
         <thead>
           <tr>
             <th>ID</th>
@@ -154,7 +157,9 @@ const [dateValue, setDate]= useState(new Date (currentDate.getFullYear(),current
           ))}
      
         </tbody>
-      </table>
+      </table>    
+    </div>
+    
 
       <Modal isOpen={modalInsertar}>
             <ModalHeader>Insertar Gestor de base de datos</ModalHeader>
