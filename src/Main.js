@@ -1,6 +1,7 @@
 import React from 'react';  
 import './App.css';  
 import Login from "./login/Login";  
+import Register from "./login/Register"
 import Dashboard from "./login/Dashboard";  
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';   
  
@@ -17,13 +18,14 @@ function Main() {
               <li className="nav-item">      
                 <Link to={'/Register'} className="nav-link">Register</Link>      
               </li>    
+              
             </ul>      
           </div>      
         </nav> <br />      
         <Switch>        
           <Route path='/login' component={Login} />
           <Route path='/Dashboard' component={Dashboard} />  
-          {/* <Route path='/Register' component={Register} />     */}
+          <Route path='/Register' component={Register} />
      
         </Switch>      
       </div>      
