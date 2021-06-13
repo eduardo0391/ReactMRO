@@ -8,7 +8,10 @@ function Register(props)
 
     }
      const onChange = (e) => {
-        setUser(e.target.value);
+        setUser({...user, [e.target.name]: e.target.value});
+     }
+     const RegisterNewUser= ()=>{
+         console.log(user);
      }
     return (
        <div className="auth-wrapper">  
@@ -48,7 +51,7 @@ function Register(props)
                             placeholder="Email" name="Email" onChange={onChange}></input>
                         </div>
 
-                        <button type="button" className="btn btn-primary btn-block">Sign up</button>
+                        <button type="button" className="btn btn-primary btn-block" onClick={()=>RegisterNewUser()}>Sign up</button>
                 </form>
             </div>
         </div>
