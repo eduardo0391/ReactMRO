@@ -3,15 +3,30 @@ import axios from 'axios';
 
 function Register(props)
 {
-    const [user, setUser] = useState({User:"", Password:"", RepeatPassword:"", Email:"", Name:"" })
+    const [user, setUser] = useState({UserName:"", Password:"", RepeatPassword:"", Email:"", Name:"" })
     const Register = (e) => {
 
     }
-     const onChange = (e) => {
+    const apiUrl= "http://localhost:55205/api/User/";
+
+    const onChange = (e) => {
         setUser({...user, [e.target.name]: e.target.value});
      }
      const RegisterNewUser= ()=>{
          console.log(user);
+         const userData= user;
+         axios.post(apiUrl, userData)
+         .then(
+         (result)=>{
+             console.log(result);
+         }
+         )
+         .catch(
+             (error)=>
+             {
+                 console.log(error);
+             }
+         )
      }
     return (
        <div className="auth-wrapper">  
@@ -22,8 +37,8 @@ function Register(props)
                         <div className="form-group">
                             
                             <label>User</label>
-                            <input type="Text" class="form-control" value={user.User} 
-                            placeholder="User" name="User" onChange={e=> setUser(e.target.value)}>
+                            <input type="Text" class="form-control" value={user.UserName} 
+                            placeholder="User" name="UserName" onChange={onChange} >
                             </input>
                         </div>
 

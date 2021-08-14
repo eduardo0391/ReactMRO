@@ -6,9 +6,9 @@ import axios from 'axios';
 function Login(props)
 {
 const [user, setUser] = useState({Email:'', Password:''});
-const apiUrl= "http://localhost:1010/api/User/Login";
+//const apiUrl= "http://localhost:1010/api/User/Login";
 const [error, setError]=useState("");
-// const apiUrl= "http://localhost:55205/api/User/Login"
+ const apiUrl= "http://localhost:55205/api/User/Login"
 
 const Login = (e) => {
       setError('');

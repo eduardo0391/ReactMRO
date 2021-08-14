@@ -10,8 +10,8 @@ import './Movement.css';
 import Moment from 'moment';
 
 function Movement() {
-  //const baseUrl = 'http://localhost:55205/api/Movemen11t';
-  const baseUrl = 'http://localhost:1010/api/Movement'; 
+  const baseUrl = 'http://localhost:55205/api/Movement';
+  // baseUrl = 'http://localhost:1010/api/Movement'; 
   const [data, setData] = useState([]);
   const [modalInsertar, setModalInsert]= useState(false);
   const [modalEditar, setModalEditar]= useState(false);
